@@ -1,0 +1,27 @@
+name: Publish to NuGet
+on:
+  release:
+    types: [published]
+permissions:
+  contents: read
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: nuget
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Check the tag matches the version
+        run: grep -q "<Version>${GITHUB_REF_NAME#v}</Version>" src/Vaartix/Vaartix.csproj
+      - run: dotnet test -c Release
+      - run: dotnet pack src/Vaartix/Vaartix.csproj -c Release -o out
+      - uses: NuGet/login@v1
+        id: login
+        with:
+          user: ${{ vars.NUGET_USER }}
+      - run: dotnet nuget push "out/*.nupkg" --api-key "${{ steps.login.outputs.NUGET_API_KEY }}" --source https://api.nuget.org/v3/index.json

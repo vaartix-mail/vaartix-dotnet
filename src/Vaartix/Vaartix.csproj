@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageId>Vaartix</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>Vaartix</Authors>
+    <Company>NAP Designs</Company>
+    <Description>The official .NET client for Vaartix, the transactional email API built in India.</Description>
+    <PackageTags>email;transactional-email;smtp;api;vaartix</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://vaartix.com</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/vaartix-mail/vaartix-dotnet</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
+  </ItemGroup>
+</Project>
