@@ -8,7 +8,7 @@
     <PackageId>Vaartix</PackageId>
     <Version>0.1.0</Version>
     <Authors>Vaartix</Authors>
-    <Company>NAP Designs</Company>
+    <Company>SNAP Technologies</Company>
     <Description>The official .NET client for Vaartix, the transactional email API built in India.</Description>
     <PackageTags>email;transactional-email;smtp;api;vaartix</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
